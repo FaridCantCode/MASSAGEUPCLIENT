@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Cards - Serenity Spa & Massage Therapy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> info@serenityspamassage.com</span>
+                <span><i class="fas fa-phone"></i> (555) 123-4567</span>
+            </div>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-placeholder">
+                    <i class="fas fa-spa"></i>
+                    <span>Serenity Spa</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="gift-cards.html" class="nav-link active">Gift Cards</a></li>
+                    <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                    <li><a href="checkout.html" class="nav-link">Checkout</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Gift Cards Hero -->
+    <section class="gift-cards-hero">
+        <div class="container">
+            <h1>Give the Gift of Wellness</h1>
+            <p>Treat someone special to the ultimate spa experience with our luxury gift cards</p>
+        </div>
+    </section>
+
+    <!-- Gift Card Options -->
+    <section class="gift-card-options">
+        <div class="container">
+            <h2>Choose Your Gift Card</h2>
+            
+            <!-- Pre-set Amounts -->
+            <div class="gift-card-section">
+                <h3>Popular Amounts</h3>
+                <div class="gift-cards-grid">
+                    <div class="gift-card-option">
+                        <div class="gift-card-design">
+                            <i class="fas fa-gift"></i>
+                            <h4>$100</h4>
+                            <p>Perfect for a 60-minute massage</p>
+                        </div>
+                        <button class="select-card-btn" data-amount="100">Select</button>
+                    </div>
+
+                    <div class="gift-card-option">
+                        <div class="gift-card-design">
+                            <i class="fas fa-gift"></i>
+                            <h4>$150</h4>
+                            <p>Great for premium treatments</p>
+                        </div>
+                        <button class="select-card-btn" data-amount="150">Select</button>
+                    </div>
+
+                    <div class="gift-card-option">
+                        <div class="gift-card-design">
+                            <i class="fas fa-gift"></i>
+                            <h4>$200</h4>
+                            <p>Ideal for extended sessions</p>
+                        </div>
+                        <button class="select-card-btn" data-amount="200">Select</button>
+                    </div>
+
+                    <div class="gift-card-option">
+                        <div class="gift-card-design">
+                            <i class="fas fa-gift"></i>
+                            <h4>$300</h4>
+                            <p>Perfect for couples massage</p>
+                        </div>
+                        <button class="select-card-btn" data-amount="300">Select</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Amount -->
+            <div class="gift-card-section">
+                <h3>Custom Amount</h3>
+                <div class="custom-amount-section">
+                    <div class="custom-amount-input">
+                        <label for="custom-amount">Enter Amount ($25 - $1000)</label>
+                        <input type="number" id="custom-amount" min="25" max="1000" placeholder="Enter amount">
+                        <button class="select-custom-btn">Select Custom Amount</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Card Purchase Form -->
+    <section class="gift-card-purchase" id="purchase-form" style="display: none;">
+        <div class="container">
+            <h2>Complete Your Purchase</h2>
+            <div class="purchase-content">
+                <div class="purchase-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-item">
+                        <span>Gift Card Amount:</span>
+                        <span id="selected-amount">$0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Processing Fee:</span>
+                        <span>$0</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="total-amount">$0</span>
+                    </div>
+                </div>
+
+                <div class="purchase-form">
+                    <form id="gift-card-form">
+                        <div class="form-section">
+                            <h4>Recipient Information</h4>
+                            <div class="form-group">
+                                <input type="text" placeholder="Recipient's Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Recipient's Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Personal Message (Optional)" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Purchaser Information</h4>
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Your Phone Number" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Delivery Options</h4>
+                            <div class="delivery-options">
+                                <label class="delivery-option">
+                                    <input type="radio" name="delivery" value="email" checked>
+                                    <span>Email Delivery (Instant)</span>
+                                </label>
+                                <label class="delivery-option">
+                                    <input type="radio" name="delivery" value="physical">
+                                    <span>Physical Card (5-7 business days)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-section" id="physical-address" style="display: none;">
+                            <h4>Mailing Address</h4>
+                            <div class="form-group">
+                                <input type="text" placeholder="Street Address">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="City">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="State">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="ZIP Code">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="cta-button purchase-btn">Complete Purchase</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Card Benefits -->
+    <section class="gift-card-benefits">
+        <div class="container">
+            <h2>Why Choose Our Gift Cards?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Never Expires</h3>
+                    <p>Our gift cards never expire, giving recipients the flexibility to use them whenever they're ready.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Flexible Usage</h3>
+                    <p>Can be used for any service or combination of services at our spa.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Digital & Physical</h3>
+                    <p>Choose between instant email delivery or a beautiful physical card.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure & Reliable</h3>
+                    <p>All transactions are secure and gift cards are backed by our satisfaction guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Wellness Avenue, Spa City, SC 12345</p>
+                        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@serenityspamassage.com</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Business Hours</h3>
+                    <div class="footer-hours">
+                        <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
+                        <p>Saturday: 8:00 AM - 6:00 PM</p>
+                        <p>Sunday: 10:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="footer-social">
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Serenity Spa & Massage Therapy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Gift card selection functionality
+        document.querySelectorAll('.select-card-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const amount = this.dataset.amount;
+                selectGiftCard(amount);
+            });
+        });
+
+        document.querySelector('.select-custom-btn').addEventListener('click', function() {
+            const customAmount = document.getElementById('custom-amount').value;
+            if (customAmount >= 25 && customAmount <= 1000) {
+                selectGiftCard(customAmount);
+            } else {
+                alert('Please enter an amount between $25 and $1000');
+            }
+        });
+
+        function selectGiftCard(amount) {
+            document.getElementById('selected-amount').textContent = '$' + amount;
+            document.getElementById('total-amount').textContent = '$' + amount;
+            document.getElementById('purchase-form').style.display = 'block';
+            document.getElementById('purchase-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Delivery option toggle
+        document.querySelectorAll('input[name="delivery"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const addressSection = document.getElementById('physical-address');
+                if (this.value === 'physical') {
+                    addressSection.style.display = 'block';
+                } else {
+                    addressSection.style.display = 'none';
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('gift-card-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your gift card purchase! You will receive a confirmation email shortly.');
+            this.reset();
+            document.getElementById('purchase-form').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
